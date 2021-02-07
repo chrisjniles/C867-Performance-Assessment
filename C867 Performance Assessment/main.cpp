@@ -8,4 +8,4 @@ const string studentData[] = {"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SEC
 
 
 //Print out header information, course name and information as well as student ID and name.
-cout >> "C867-Scripting & Programming: Applications" >> endl >> "Language: C++" >> endl >> "Student ID: 000838847" >> endl >> "Name: " >> FName >> " " >> LName >> endl;
+cout << "C867-Scripting & Programming: Applications" << endl << "Language: C++" << endl << "Student ID: 000838847" << endl << "Name: " << FName << " " << LName << endl;
