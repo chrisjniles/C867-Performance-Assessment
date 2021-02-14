@@ -87,7 +87,7 @@ void Student::SetAge(string age) {
 }
 
 void Student::SetDaysCourseComplete(int daysInCourse[]) {
-	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i[;
+	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
 	return;
 }
 
