@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-// Section D1 - Create Student class
+// Section D1 - Define Student class
 
 class Student {
 public:
@@ -18,7 +18,7 @@ public:
 		string emailAddress,
 		string age,
 		int daysInCourse[],
-		Degree type;
+		DegreeProgram type);
 	~Student();
 	// Section D2a - accessors
 	string GetStudentID();
@@ -27,9 +27,22 @@ public:
 	string GetEmailAddress();
 	string GetAge();
 	int* GetDaysInCourse();
-
+	DegreeProgram GetDegreeProgram();
+	// Section D2b - mutators
+	void SetStudentId(string studentId);
+	void SetFirstName(string firstName);
+	void SetLastName(string lastName);
+	void SetEmailAddress(string emailAddress);
+	void SetStudentAge(string studentAge);
+	void SetDaysCourseComplete(int daysInCourse[]);
+	void Print();
 private:
-
+	string studentId;
+	string firstName;
+	string lastName;
+	string emailAddress;
+	int* daysInCourse;
+	DegreeProgram degreeType;
 };
 
 #endif
