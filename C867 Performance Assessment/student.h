@@ -33,7 +33,7 @@ public:
 	void SetFirstName(string firstName);
 	void SetLastName(string lastName);
 	void SetEmailAddress(string emailAddress);
-	void SetStudentAge(string studentAge);
+	void SetAge(string age);
 	void SetDaysCourseComplete(int daysInCourse[]);
 	void Print();
 private:
@@ -41,6 +41,7 @@ private:
 	string firstName;
 	string lastName;
 	string emailAddress;
+	string age;
 	int* daysInCourse;
 	DegreeProgram degreeType;
 };

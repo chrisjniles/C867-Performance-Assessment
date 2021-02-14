@@ -6,7 +6,7 @@ Student::Student() {
 	firstName = "";
 	lastName = "";
 	emailAddress = "";
-	studentAge = "";
+	age = "";
 	this->daysInCourse = new int[3];
 }
 
@@ -17,12 +17,17 @@ Student::Student(
 	string emailAddress,
 	string age,
 	int daysInCourse[],
-	Degree type){
+	DegreeProgram type){
 	this->studentId = studentId;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
-	this->studentAge = age;
+	this->age = age;
 	this->daysInCourse = new int[3];
 	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
 }
+
+Student::~Student() {
+	delete[] daysInCourse;
+}
+
