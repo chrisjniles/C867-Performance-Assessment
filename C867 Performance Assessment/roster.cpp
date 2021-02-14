@@ -1,6 +1,6 @@
 #include "roster.h"
 
-// Section E1 - Create a Roster class
+// Section E1 - Create Roster class
 
 Roster::Roster(int maxSize) {
 	const string studentData[] = {

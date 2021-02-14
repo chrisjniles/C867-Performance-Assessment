@@ -9,7 +9,7 @@
 #include <sstream>
 using namespace std;
 
-// Section E1 - Create a Roster Class
+// Section E1 - Create Roster class
 
 
 #endif
