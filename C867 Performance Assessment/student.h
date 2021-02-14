@@ -20,15 +20,15 @@ public:
 		int daysInCourse[],
 		DegreeProgram type);
 	~Student();
-	// Section D2a - accessors
-	string GetStudentID();
+	// Section D2a - declare accessors
+	string GetStudentId();
 	string GetFirstName();
 	string GetLastName();
 	string GetEmailAddress();
 	string GetAge();
 	int* GetDaysInCourse();
 	DegreeProgram GetDegreeProgram();
-	// Section D2b - mutators
+	// Section D2b - declare mutators
 	void SetStudentId(string studentId);
 	void SetFirstName(string firstName);
 	void SetLastName(string lastName);

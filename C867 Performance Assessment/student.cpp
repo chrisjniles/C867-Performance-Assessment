@@ -31,3 +31,63 @@ Student::~Student() {
 	delete[] daysInCourse;
 }
 
+//D2a - define accessors
+string Student::GetStudentId() {
+	return studentId;
+}
+
+string Student::GetFirstName() {
+	return firstName;
+}
+
+string Student::GetLastName() {
+	return lastName;
+}
+
+string Student::GetEmailAddress() {
+	return emailAddress;
+}
+
+string Student::GetAge() {
+	return age;
+}
+
+int* Student::GetDaysInCourse() {
+	return daysInCourse;
+}
+
+DegreeProgram Student::GetDegreeProgram() {
+	return degreeType;
+}
+
+//D2b - define mutators
+void Student::SetStudentId(string studentId) {
+	this->studentId = studentId;
+	return;
+}
+
+void Student::SetFirstName(string firstName) {
+	this->firstName = firstName;
+	return;
+}
+
+void Student::SetLastName(string lastName) {
+	this->lastName = lastName;
+	return;
+}
+
+void Student::SetEmailAddress(string emailAddress) {
+	this->emailAddress = emailAddress;
+	return;
+}
+
+void Student::SetAge(string age) {
+	this->age = age;
+	return;
+}
+
+void Student::SetDaysCourseComplete(int daysInCourse) {
+	for (int i = 0; i < 3; i++) this->daysInCourse = daysInCourse;
+	return;
+}
+
