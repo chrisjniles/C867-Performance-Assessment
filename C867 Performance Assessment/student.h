@@ -18,7 +18,7 @@ public:
 		string emailAddress,
 		string age,
 		int daysInCourse[],
-		Degree type);
+		Degree type;
 	~Student();
 	// Section D2a - accessors
 	string GetStudentID();
