@@ -91,6 +91,7 @@ void Student::SetDaysCourseComplete(int daysInCourse[]) {
 	return;
 }
 
+// Section D2e - print specific student data
 void Student::Print() {
 	int* tempdays = GetDaysInCourse();
 	cout << "Student ID: " << GetStudentId <<

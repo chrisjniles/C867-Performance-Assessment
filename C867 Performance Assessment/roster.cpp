@@ -11,5 +11,5 @@ Roster::Roster(int maxSize) {
 		"A5,Christopher,Niles,cniles7@wgu.edu,38,30,35,40,SOFTWARE"
 	}
 
-	
+
 };

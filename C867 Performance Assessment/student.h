@@ -11,6 +11,7 @@ using namespace std;
 class Student {
 public:
 	Student();
+	// Section D2d - constructor using all of the input params
 	Student(
 		string studentId,
 		string firstName,
@@ -35,6 +36,7 @@ public:
 	void SetEmailAddress(string emailAddress);
 	void SetAge(string age);
 	void SetDaysCourseComplete(int daysInCourse[]);
+	// Section D2e - print specific student data
 	void Print();
 private:
 	string studentId;
