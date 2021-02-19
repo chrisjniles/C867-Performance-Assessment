@@ -15,7 +15,7 @@ public:
 	Roster(int maxSize);
 	~Roster();
 	//Section E3a-e required functions
-	public void add(
+	void add(
 		string studentID,
 		string firstName, string lastName,
 		string emailAddress,
@@ -24,11 +24,11 @@ public:
 		int daysInCourse2,
 		int daysInCourse3,
 		DegreeProgram degreeprogram);
-	public void remove(string studentID);
-	public void printAll();
-	public void printAverageDaysInCourse(string studentID);
-	public void printInvalidEmails();
-	public void printInvalidEmails();
+	void remove(string studentID);
+	void printAll();
+	void printAverageDaysInCourse(string studentID);
+	void printInvalidEmails();
+	void printInvalidEmails();
 private:
 	int lastIndex;
 	int maxSize;
