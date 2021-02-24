@@ -36,7 +36,7 @@ int main() {
 	while (exitSign != 'q') {
 
 
-		cout << "\nenter 'q' to quit...";
+		cout << endl << "enter 'q' to quit...";
 		cin >> exitSign;
 		cout << endl << endl;
 	}

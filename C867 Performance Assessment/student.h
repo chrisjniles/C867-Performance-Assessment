@@ -12,8 +12,7 @@ class Student {
 public:
 	Student();
 	// Section D2d - constructor using all of the input params
-	Student(
-		string studentId,
+	Student(string studentId,
 		string firstName,
 		string lastName,
 		string emailAddress,

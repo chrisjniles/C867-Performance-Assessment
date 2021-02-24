@@ -10,8 +10,7 @@ Student::Student() {
 	this->daysInCourse = new int[3];
 }
 
-Student::Student(
-	string studentId,
+Student::Student(string studentId,
 	string firstName,
 	string lastName,
 	string emailAddress,
