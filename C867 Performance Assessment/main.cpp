@@ -9,6 +9,7 @@ int main() {
 	int maxSize = 5;
 
 	//Print out header information; course name and information as well as student ID and name.
+	
 	cout << "C867-Scripting & Programming: Applications" << endl
 		<< "Language:	C++" << endl
 		<< "Student ID:	000838847" << endl
@@ -17,7 +18,7 @@ int main() {
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
 	classRoster->printAll();
-
+	
 	classRoster->printInvalidEmails();
 
 	for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse()
@@ -40,7 +41,7 @@ int main() {
 		cin >> exitSign;
 		cout << endl << endl;
 	}
-
+	
 	return 0;
 
 }

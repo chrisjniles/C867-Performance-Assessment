@@ -23,7 +23,15 @@ Roster::~Roster() {
 	delete[] students;
 }
 
-void Roster::add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram type) {
+void Roster::add(string studentId,
+	string firstName,
+	string lastName,
+	string emailAddress,
+	int age,
+	int daysInCourse1,
+	int daysInCourse2,
+	int daysInCourse3,
+	DegreeProgram type) {
 	this->daysInCourse = new int[3];
 	this->daysInCourse[0] = daysInCourse1;
 	this->daysInCourse[1] = daysInCourse2;

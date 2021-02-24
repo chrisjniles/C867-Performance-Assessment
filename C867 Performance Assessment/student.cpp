@@ -16,7 +16,7 @@ Student::Student(string studentId,
 	string emailAddress,
 	string age,
 	int daysInCourse[],
-	DegreeProgram type){
+	DegreeProgram type) {
 	this->studentId = studentId;
 	this->firstName = firstName;
 	this->lastName = lastName;
