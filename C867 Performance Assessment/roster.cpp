@@ -68,7 +68,7 @@ void Roster::printAll() {
 	int i = 0;
 	for (int i = 0; i < maxSize; ++i) {
 		cout << i + 1 << "   ";
-		students[i]->Print();
+		students[i]->printStudent();
 	}
 
 	return;

@@ -36,7 +36,7 @@ public:
 	void SetAge(string age);
 	void SetDaysCourseComplete(int daysInCourse[]);
 	// Section D2e - print specific student data
-	void Print();
+	void printStudent();
 private:
 	string studentId;
 	string firstName;
