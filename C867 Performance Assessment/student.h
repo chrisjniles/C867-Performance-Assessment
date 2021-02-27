@@ -2,6 +2,8 @@
 #define STUDENT_H
 
 #include "degree.h"
+#include "roster.h"
+#include "student.h"
 #include <string>
 #include <iostream>
 using namespace std;

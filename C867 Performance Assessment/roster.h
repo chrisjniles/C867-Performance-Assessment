@@ -1,6 +1,7 @@
 #ifndef ROSTER_H
 #define ROSTER_H
 
+#include "degree.h"
 #include "roster.h"
 #include "student.h"
 #include <string>

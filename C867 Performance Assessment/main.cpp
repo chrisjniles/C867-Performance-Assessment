@@ -17,9 +17,9 @@ int main() {
 
 	 
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
-	
-	classRoster->printAll();
 	/*
+	classRoster->printAll();
+	
 	classRoster->printInvalidEmails();
 
 	for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse()
