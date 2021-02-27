@@ -1,4 +1,7 @@
 #include "student.h"
+#include <string>
+#include <iostream>
+using namespace std;
 
 // Section D1 - Create Student class
 Student::Student() {
