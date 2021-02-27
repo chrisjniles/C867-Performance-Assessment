@@ -12,13 +12,7 @@ class Student {
 public:
 	Student();
 	// Section D2d - constructor using all of the input params
-	Student(string studentId,
-		string firstName,
-		string lastName,
-		string emailAddress,
-		string age,
-		int daysInCourse[],
-		DegreeProgram type);
+	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], DegreeProgram type);
 	~Student();
 	// Section D2a - declare accessors
 	string GetStudentId();

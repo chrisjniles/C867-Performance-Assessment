@@ -13,13 +13,7 @@ Student::Student() {
 	this->daysInCourse = new int[3];
 }
 
-Student::Student(string studentId,
-	string firstName,
-	string lastName,
-	string emailAddress,
-	string age,
-	int daysInCourse[],
-	DegreeProgram type) {
+Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], DegreeProgram type) {
 	this->studentId = studentId;
 	this->firstName = firstName;
 	this->lastName = lastName;
