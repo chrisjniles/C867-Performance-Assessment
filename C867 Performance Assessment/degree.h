@@ -3,7 +3,7 @@
 
 //Section C - Define enum data type DegreeProgram
 
-enum class DegreeProgram {
+enum DegreeProgram {
 	SECURITY,
 	NETWORK,
 	SOFTWARE

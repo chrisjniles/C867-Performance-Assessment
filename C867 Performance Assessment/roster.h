@@ -18,20 +18,20 @@ public:
 	//Section E3a-e required functions
 	void add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram type);
 	void remove(string studentID);
-	void printAll();
+	void printRoster();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(DegreeProgram degreeProgram);
 private:
 	int lastIndex;
 	int maxSize;
-	Student** students;
+	Student **students;
 	string studentId;
 	string firstName;
 	string lastName;
 	string email;
 	string age;
-	int* daysInCourse;
+	int *daysInCourse;
 	string degreeType;
 };
 

@@ -55,7 +55,7 @@ void Roster::remove(string studentID) {
 	return;
 }
 
-void Roster::printAll() {
+void Roster::printRoster() {
 	cout << endl;
 	int i = 0;
 	for (int i = 0; i < maxSize; ++i) {

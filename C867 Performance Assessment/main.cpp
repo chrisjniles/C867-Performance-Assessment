@@ -17,8 +17,8 @@ int main() {
 
 	 
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
-	/*
-	classRoster->printAll();
+	
+	classRoster->printRoster();
 	
 	classRoster->printInvalidEmails();
 
@@ -42,7 +42,7 @@ int main() {
 		cin >> exitSign;
 		cout << endl << endl;
 	}
-	*/
+	
 	return 0;
 
 }
