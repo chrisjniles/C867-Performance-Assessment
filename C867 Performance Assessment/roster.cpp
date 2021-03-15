@@ -26,11 +26,11 @@ Roster::~Roster() {
 }
 
 void Roster::add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram type) {
+	this->age = to_string(age);
 	this->daysInCourse = new int[3];
 	this->daysInCourse[0] = daysInCourse1;
 	this->daysInCourse[1] = daysInCourse2;
 	this->daysInCourse[2] = daysInCourse3;
-	this->age = to_string(age);
 
 	Student** tempStudents = new Student * [maxSize];
 	for (int i = 0; i < maxSize; i++) tempStudents[i] = students[i];
