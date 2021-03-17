@@ -18,6 +18,10 @@ int main() {
 	 
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 	
+	// Create and test here using breakpoints
+
+	/* Commented out to test the new Roster function
+
 	classRoster->printRoster();
 	
 	classRoster->printInvalidEmails();
@@ -42,6 +46,8 @@ int main() {
 		cin >> exitSign;
 		cout << endl << endl;
 	}
+
+	*/
 	
 	return 0;
 
