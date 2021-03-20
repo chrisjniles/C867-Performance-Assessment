@@ -18,7 +18,9 @@ int main() {
 	 
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 	
-	// Create and test here using breakpoints
+	// Break points begin here
+
+	cout << "Class Roster: " << classRoster << endl;
 
 	/* Commented out to test the new Roster function
 
