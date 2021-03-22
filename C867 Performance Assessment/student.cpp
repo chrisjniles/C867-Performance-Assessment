@@ -10,7 +10,7 @@ Student::Student() {
 	lastName = "";
 	emailAddress = "";
 	age = "";
-	this->daysInCourse = new int[3];
+//	this->daysInCourse = new int[3];
 }
 
 Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], DegreeProgram type) {
@@ -19,13 +19,14 @@ Student::Student(string studentId, string firstName, string lastName, string ema
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->age = age;
-	this->daysInCourse = new int[3];
+//	this->daysInCourse = new int[3];
 	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
 }
 
 Student::~Student() {
-	delete[] daysInCourse;
+//	delete[] daysInCourse;
 }
+
 
 //D2a - define accessors
 string Student::GetStudentId() {
