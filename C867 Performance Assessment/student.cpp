@@ -54,7 +54,7 @@ int* Student::GetDaysInCourse() {
 }
 
 DegreeProgram Student::GetDegreeProgram() {
-	return degreeType;
+	return degreeProgram;
 }
 
 //D2b - define mutators

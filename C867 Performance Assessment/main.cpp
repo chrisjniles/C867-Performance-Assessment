@@ -20,22 +20,9 @@ int main() {
 	
 	// Break points begin here
 
-	// cout << "Class Roster: " << classRoster << endl;
-
 	classRoster->printRoster();
-
-	// Commented out to test the new Roster function
-
 
 	/*
-	* 
-	* Parse Student Data Table
-	* Add student attribute
-	* Print
-	* 
-	* 
-	
-	classRoster->printRoster();
 	
 	classRoster->printInvalidEmails();
 

@@ -32,7 +32,7 @@ private:
 	string email;
 	string age;
 	int *daysInCourse;
-	string degreeType;
+	string degreeProgram;
 };
 
 #endif

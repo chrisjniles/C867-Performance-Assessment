@@ -39,7 +39,7 @@ private:
 	string emailAddress;
 	string age;
 	int daysInCourse[3];
-	DegreeProgram degreeType;
+	DegreeProgram degreeProgram;
 };
 
 #endif

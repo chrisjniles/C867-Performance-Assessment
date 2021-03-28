@@ -4,7 +4,7 @@
 using namespace std;
 
 // Section E1 - Create Roster class
-Roster::Roster(int maxSize) {
+Roster::Roster(int) {
 	const string studentData[] = {
 		"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
 		"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -15,9 +15,9 @@ Roster::Roster(int maxSize) {
 	};
 
 	this->lastIndex = -1;
-	this->maxSize = maxSize;
+	
 	// Create new pointer array to hold student objects
-	this->students = new Student * [maxSize]; 
+	this->students = new Student * [5]; 
 };
 
 Roster::~Roster() {
