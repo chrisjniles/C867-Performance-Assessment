@@ -3,7 +3,7 @@
 
 #include "degree.h"
 #include "student.h"
-#include <string
+#include <string>
 #include <iostream>
 using namespace std;
 
