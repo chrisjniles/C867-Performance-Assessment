@@ -1,6 +1,7 @@
-#include "roster.h"
+
 #include <string>
 #include <iostream>
+#include "roster.h"
 using namespace std;
 
 // Section E1 - Create Roster class
@@ -14,29 +15,20 @@ Roster::Roster(int) {
 		"A5,Christopher,Niles,cniles7@wgu.edu,38,30,35,40,SOFTWARE"
 	};
 
-	this->lastIndex = -1;
+	this->lastIndex = 0;
 	
 	// Create new pointer array to hold student objects
-	this->students = new Student * [5]; 
+	this->classRosterArray = new Student [5]; 
 };
 
 Roster::~Roster() {
 	cout << "Roster destructor called" << endl;
-	delete[] students;
+	delete[] classRosterArray;
 }
 
 void Roster::add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram type) {
-	this->age = to_string(age);
-	this->daysInCourse = new int[3];
-	this->daysInCourse[0] = daysInCourse1;
-	this->daysInCourse[1] = daysInCourse2;
-	this->daysInCourse[2] = daysInCourse3;
-
-	Student** tempStudents = new Student * [maxSize];
-	for (int i = 0; i < maxSize; i++) tempStudents[i] = students[i];
-	delete[] students;
-	students = new Student * [++maxSize];
-	for (int i = 0; i < maxSize - 1; i++) students[i] = tempStudents[i];
+	Student *s = new Student(studentId, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, type);
+	classRosterArray[lastIndex++] = *s;
 	
 	cout << endl << "Student added." << endl;
 	return;
@@ -44,9 +36,9 @@ void Roster::add(string studentId, string firstName, string lastName, string ema
 void Roster::remove(string studentID) {
 	cout << endl;
 	for (int i = 0; i < maxSize; ++i) {
-		if (students[i]->GetStudentId() == studentID) {
-			cout << "Deleting: " << students[i]->GetStudentId() << endl;
-			for (; i < maxSize - 1; ++i) students[i] = students[i + 1];
+		if (classRosterArray[i].GetStudentId() == studentID) {
+			cout << "Deleting: " << classRosterArray[i].GetStudentId() << endl;
+			for (; i < maxSize - 1; ++i) classRosterArray[i] = classRosterArray[i + 1];
 			--maxSize;
 			return;
 		}
@@ -55,12 +47,12 @@ void Roster::remove(string studentID) {
 	return;
 }
 
-void Roster::printRoster() {
+void Roster::printAll() {
 	cout << endl;
 	int i = 0;
 	for (int i = 0; i < maxSize; ++i) {
 		cout << i + 1 << "   ";
-		students[i]->printStudent();
+		classRosterArray[i].printStudent();
 	}
 
 	return;
@@ -69,7 +61,7 @@ void Roster::printRoster() {
 void Roster::printInvalidEmails() {
 	cout << endl << "\nPrint invalid emails: \n" << endl;
 	for (int i = 0; i < maxSize; ++i) {
-		string email = students[i]->GetEmailAddress();
+		string email = classRosterArray[i].GetEmailAddress();
 		int positionAtSign = email.find('@');
 		int periodAfterAtSign = email.find('.', positionAtSign);
 		if (periodAfterAtSign == -1) cout << "\t" << email << endl;
@@ -82,9 +74,9 @@ void Roster::printInvalidEmails() {
 void Roster::printAverageDaysInCourse(string studentID) {
 	cout << endl;
 	for (int i = 0; i < maxSize; ++i) {
-		if (students[i]->GetStudentId() == studentID) {
-			cout << "Student ID: " << students[i]->GetStudentId();
-			int* tempDays = students[i]->GetDaysInCourse();
+		if (classRosterArray[i].GetStudentId() == studentID) {
+			cout << "Student ID: " << classRosterArray[i].GetStudentId();
+			int* tempDays = classRosterArray[i].GetDaysInCourse();
 			int avgDays = 0;
 			for (int j = 0; j < 3; ++j) {
 				avgDays += tempDays[j];
@@ -98,10 +90,10 @@ void Roster::printAverageDaysInCourse(string studentID) {
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
 	int numberMatches = 0;
 	for (int i = 0; i < maxSize; ++i) {
-		if (students[i]->GetDegreeProgram() == degreeProgram) {
+		if (classRosterArray[i].GetDegreeProgram() == degreeProgram) {
 			++numberMatches;
 			cout << numberMatches << "   ";
-			students[i]->printStudent();
+			classRosterArray[i].printStudent();
 		}
 	}
 	return;

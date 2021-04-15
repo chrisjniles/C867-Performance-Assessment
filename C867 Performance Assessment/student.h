@@ -1,10 +1,9 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "degree.h"
-#include "student.h"
-
+#include <string>
 #include <iostream>
+#include "degree.h"
 using namespace std;
 
 // Section D1 - Define Student class
@@ -13,14 +12,14 @@ class Student {
 public:
 	Student();
 	// Section D2d - constructor using all of the input params
-	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], DegreeProgram type);
+	Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram type);
 	~Student();
 	// Section D2a - declare accessors
 	string GetStudentId();
 	string GetFirstName();
 	string GetLastName();
 	string GetEmailAddress();
-	string GetAge();
+	int GetAge();
 	int* GetDaysInCourse();
 	DegreeProgram GetDegreeProgram();
 	// Section D2b - declare mutators
@@ -28,7 +27,7 @@ public:
 	void SetFirstName(string firstName);
 	void SetLastName(string lastName);
 	void SetEmailAddress(string emailAddress);
-	void SetAge(string age);
+	void SetAge(int age);
 	void SetDaysCourseComplete(int daysInCourse[]);
 	// Section D2e - print specific student data
 	void printStudent();
@@ -37,7 +36,7 @@ private:
 	string firstName;
 	string lastName;
 	string emailAddress;
-	string age;
+	int age;
 	int daysInCourse[3];
 	DegreeProgram degreeProgram;
 };

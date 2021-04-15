@@ -1,6 +1,7 @@
-#include "student.h"
+
 #include <string>
 #include <iostream>
+#include "student.h"
 using namespace std;
 
 // Section D1 - Create Student class
@@ -9,11 +10,11 @@ Student::Student() {
 	firstName = "";
 	lastName = "";
 	emailAddress = "";
-	age = "";
+	age = 0;
 //	this->daysInCourse = new int[3];
 }
 
-Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], DegreeProgram type) {
+Student::Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram type) {
 	this->studentId = studentId;
 	this->firstName = firstName;
 	this->lastName = lastName;
@@ -45,7 +46,7 @@ string Student::GetEmailAddress() {
 	return emailAddress;
 }
 
-string Student::GetAge() {
+int Student::GetAge() {
 	return age;
 }
 
@@ -78,7 +79,7 @@ void Student::SetEmailAddress(string emailAddress) {
 	return;
 }
 
-void Student::SetAge(string age) {
+void Student::SetAge(int age) {
 	this->age = age;
 	return;
 }
@@ -96,5 +97,5 @@ void Student::printStudent() {
 		<< "\t Last Name: " << GetLastName()
 		<< "\t Student Age: " << GetAge();
 	cout << "\t Days In Course: {" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
-	cout << "\t Degree Program: " << GetDegreeProgram() << "." << endl;
+	cout << "\t Degree Program: " << degreeProgramString[(int) GetDegreeProgram()] << "." << endl;
 }

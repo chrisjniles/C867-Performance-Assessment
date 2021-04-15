@@ -1,8 +1,8 @@
-#include "degree.h"
-#include "roster.h"
-#include "student.h"
+
 #include <iostream>
 #include <string>
+#include "roster.h"
+
 using namespace std;
 
 int main() {
@@ -20,7 +20,7 @@ int main() {
 	
 	// Break points begin here
 
-	classRoster->printRoster();
+	classRoster->printAll();
 
 	/*
 	
