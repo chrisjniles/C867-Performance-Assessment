@@ -2,9 +2,6 @@
 #define ROSTER_H
 
 #include <string>
-#include <iostream>
-#include <vector>
-#include <sstream>
 #include "student.h"
 using namespace std;
 
@@ -20,6 +17,7 @@ public:
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(DegreeProgram degreeProgram);
+	Student findStudent(int Index);
 private:
 	int lastIndex;
 	int maxSize;

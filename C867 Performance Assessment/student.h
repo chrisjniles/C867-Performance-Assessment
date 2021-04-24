@@ -2,7 +2,6 @@
 #define STUDENT_H
 
 #include <string>
-#include <iostream>
 #include "degree.h"
 using namespace std;
 
@@ -12,7 +11,8 @@ class Student {
 public:
 	Student();
 	// Section D2d - constructor using all of the input params
-	Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram type);
+	Student(string studentId, string firstName, string lastName, string emailAddress, int age,
+		int dIC1, int dIC2, int dIC3, DegreeProgram type);
 	~Student();
 	// Section D2a - declare accessors
 	string GetStudentId();
@@ -28,9 +28,9 @@ public:
 	void SetLastName(string lastName);
 	void SetEmailAddress(string emailAddress);
 	void SetAge(int age);
-	void SetDaysCourseComplete(int daysInCourse[]);
+	void SetDaysCourseComplete(int* daysInCourse);
 	// Section D2e - print specific student data
-	void printStudent();
+	void print();
 private:
 	string studentId;
 	string firstName;

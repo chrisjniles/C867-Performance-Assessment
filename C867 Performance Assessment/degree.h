@@ -7,6 +7,6 @@ using namespace std;
 //Section C - Define enum data type DegreeProgram
 
 enum class DegreeProgram {SECURITY, NETWORK, SOFTWARE};
-string degreeProgramString[] = { "SECURITY","NETWORK","SOFTWARE" };
+//string degreeProgramString[] = { "SECURITY","NETWORK","SOFTWARE" };
 
 #endif

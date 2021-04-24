@@ -14,14 +14,15 @@ Student::Student() {
 //	this->daysInCourse = new int[3];
 }
 
-Student::Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram type) {
+Student::Student(string studentId, string firstName, string lastName, string emailAddress, int age, int dIC1, int dIC2, int dIC3, DegreeProgram type) {
 	this->studentId = studentId;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->age = age;
-//	this->daysInCourse = new int[3];
-	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
+	daysInCourse[0] = dIC1;
+	daysInCourse[1] = dIC2;
+	daysInCourse[2] = dIC3;
 }
 
 Student::~Student() {
@@ -84,18 +85,23 @@ void Student::SetAge(int age) {
 	return;
 }
 
-void Student::SetDaysCourseComplete(int daysInCourse[]) {
-	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
+void Student::SetDaysCourseComplete(int* dIC) {
+	daysInCourse[0] = dIC[0];
+	daysInCourse[1] = dIC[1];
+	daysInCourse[2] = dIC[2];
 	return;
 }
 
 // Section D2e - print specific student data
-void Student::printStudent() {
+void Student::print() {
 	int* tempdays = GetDaysInCourse();
+	string dPStr = "Software";
+	if (GetDegreeProgram() == DegreeProgram::NETWORK) dPStr = "Network";
+	if (GetDegreeProgram() == DegreeProgram::SECURITY) dPStr = "Security";
 	cout << "Student ID: " << GetStudentId()
 		<< "First Name: " << GetFirstName()
 		<< "\t Last Name: " << GetLastName()
 		<< "\t Student Age: " << GetAge();
 	cout << "\t Days In Course: {" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
-	cout << "\t Degree Program: " << degreeProgramString[(int) GetDegreeProgram()] << "." << endl;
+	cout << "\t Degree Program: " << dPStr << "." << endl;
 }

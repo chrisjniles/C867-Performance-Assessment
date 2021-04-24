@@ -15,6 +15,8 @@ Roster::Roster(int) {
 		"A5,Christopher,Niles,cniles7@wgu.edu,38,30,35,40,SOFTWARE"
 	};
 
+
+
 	this->lastIndex = 0;
 	
 	// Create new pointer array to hold student objects
@@ -26,8 +28,10 @@ Roster::~Roster() {
 	delete[] classRosterArray;
 }
 
-void Roster::add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram type) {
-	Student *s = new Student(studentId, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, type);
+void Roster::add(string studentId, string firstName, string lastName, string emailAddress, int age, 
+	int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram type) {
+	Student *s = new Student(studentId, firstName, lastName, emailAddress, age, 
+		daysInCourse1, daysInCourse2, daysInCourse3, type);
 	classRosterArray[lastIndex++] = *s;
 	
 	cout << endl << "Student added." << endl;
@@ -35,7 +39,7 @@ void Roster::add(string studentId, string firstName, string lastName, string ema
 }
 void Roster::remove(string studentID) {
 	cout << endl;
-	for (int i = 0; i < maxSize; ++i) {
+	for (int i = 0; i < 5; ++i) {
 		if (classRosterArray[i].GetStudentId() == studentID) {
 			cout << "Deleting: " << classRosterArray[i].GetStudentId() << endl;
 			for (; i < maxSize - 1; ++i) classRosterArray[i] = classRosterArray[i + 1];
@@ -50,9 +54,10 @@ void Roster::remove(string studentID) {
 void Roster::printAll() {
 	cout << endl;
 	int i = 0;
-	for (int i = 0; i < maxSize; ++i) {
+	for (int i = 0; i < 5; ++i) {
+		
 		cout << i + 1 << "   ";
-		classRosterArray[i].printStudent();
+		classRosterArray[i].print();
 	}
 
 	return;
@@ -60,7 +65,7 @@ void Roster::printAll() {
 
 void Roster::printInvalidEmails() {
 	cout << endl << "\nPrint invalid emails: \n" << endl;
-	for (int i = 0; i < maxSize; ++i) {
+	for (int i = 0; i < 5; ++i) {
 		string email = classRosterArray[i].GetEmailAddress();
 		int positionAtSign = email.find('@');
 		int periodAfterAtSign = email.find('.', positionAtSign);
@@ -73,7 +78,7 @@ void Roster::printInvalidEmails() {
 
 void Roster::printAverageDaysInCourse(string studentID) {
 	cout << endl;
-	for (int i = 0; i < maxSize; ++i) {
+	for (int i = 0; i < 5; ++i) {
 		if (classRosterArray[i].GetStudentId() == studentID) {
 			cout << "Student ID: " << classRosterArray[i].GetStudentId();
 			int* tempDays = classRosterArray[i].GetDaysInCourse();
@@ -89,12 +94,16 @@ void Roster::printAverageDaysInCourse(string studentID) {
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
 	int numberMatches = 0;
-	for (int i = 0; i < maxSize; ++i) {
+	for (int i = 0; i < 5; ++i) {
 		if (classRosterArray[i].GetDegreeProgram() == degreeProgram) {
 			++numberMatches;
 			cout << numberMatches << "   ";
-			classRosterArray[i].printStudent();
+			classRosterArray[i].print();
 		}
 	}
 	return;
+}
+
+Student Roster::findStudent(int index) {
+	return classRosterArray[index];
 }

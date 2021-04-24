@@ -6,8 +6,7 @@
 using namespace std;
 
 int main() {
-	int maxSize = 5;
-
+	
 	//Print out header information; course name and information as well as student ID and name.
 	
 	cout << "C867-Scripting & Programming: Applications" << endl
@@ -16,25 +15,23 @@ int main() {
 		<< "Name:		Christopher Niles" << endl;
 
 	 
-	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
+	Roster* classRoster = new Roster(5);   //create classRoster, add each student to classRoster
 	
-	// Break points begin here
 
 	classRoster->printAll();
 
-	/*
+	
 	
 	classRoster->printInvalidEmails();
 
-	for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse()
-		ostringstream idOSS;
-		idOSS << "A" << i + 1;
-		classRoster->printAverageDaysInCourse(idOSS.str());
+	for (int i = 0; i < 5; ++i) { //loop through printAverageDaysInCourse()
+		Student s = classRoster->findStudent(i);
+		classRoster->printAverageDaysInCourse(s.GetStudentId());
 	}
 
 	classRoster->remove("A3");
 
-	classRoster->printRoster();
+	classRoster->printAll();
 
 	classRoster->remove("A3");
 
@@ -46,8 +43,6 @@ int main() {
 		cin >> exitSign;
 		cout << endl << endl;
 	}
-
-	*/
 	
 	return 0;
 
