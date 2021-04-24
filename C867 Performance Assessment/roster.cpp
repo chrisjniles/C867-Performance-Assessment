@@ -1,6 +1,8 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include <sstream>
 #include "roster.h"
 using namespace std;
 
@@ -11,11 +13,47 @@ Roster::Roster(int) {
 		"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
 		"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
 		"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-		// Section A - Modify the “studentData Table” to include your personal information as the last item
-		"A5,Christopher,Niles,cniles7@wgu.edu,38,30,35,40,SOFTWARE"
+		"A5,Christopher,Niles,cniles7@wgu.edu,38,30,35,40,SOFTWARE" // Section A - Modify the “studentData Table” to include your personal information as the last item
 	};
 
+	for (int i = 0; i < numStudents; i++) 
+	{
+		size_t rhs = studentData[i].find(",");
+		Student[i].studentID = studentData[i].substr(0, rhs);
 
+		size_t lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].firstName = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].lastName = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].emailAddress = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].age = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].daysInCourse1 = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].daysInCourse2 = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find(",", lhs);
+		Student[i].daysInCourse3 = studentData[i].substr(lhs, rhs - lhs);
+
+		lhs = rhs + 1;
+		rhs = studentData[i].find("\0", lhs);
+		Student[i].type = studentData[i].substr(lhs, rhs - lhs);
+		
+	}
 
 	this->lastIndex = 0;
 	
