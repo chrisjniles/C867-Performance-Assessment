@@ -27,7 +27,7 @@ Roster::Roster(int) {
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		string lastName = studentData[i].substr(lhs, rhs - lhs);
+		string lastName = (studentData[i].substr(lhs, rhs - lhs));
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
@@ -35,19 +35,19 @@ Roster::Roster(int) {
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		int age = studentData[i].substr(lhs, rhs - lhs);
+		int age = stoi(studentData[i].substr(lhs, rhs - lhs));
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		int daysInCourse1 = studentData[i].substr(lhs, rhs - lhs);
+		int daysInCourse1 = stoi(studentData[i].substr(lhs, rhs - lhs));
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		int daysInCourse2 = studentData[i].substr(lhs, rhs - lhs);
+		int daysInCourse2 = stoi(studentData[i].substr(lhs, rhs - lhs));
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		int daysInCourse3 = studentData[i].substr(lhs, rhs - lhs);
+		int daysInCourse3 = stoi(studentData[i].substr(lhs, rhs - lhs));
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find("\0", lhs);
