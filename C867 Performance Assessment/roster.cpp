@@ -19,39 +19,39 @@ Roster::Roster(int) {
 	for (int i = 0; i < numStudents; i++) 
 	{
 		size_t rhs = studentData[i].find(",");
-		Student[i].studentID = studentData[i].substr(0, rhs);
+		string studentID = studentData[i].substr(0, rhs);
 
 		size_t lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].firstName = studentData[i].substr(lhs, rhs - lhs);
+		string firstName = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].lastName = studentData[i].substr(lhs, rhs - lhs);
+		string lastName = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].emailAddress = studentData[i].substr(lhs, rhs - lhs);
+		string emailAddress = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].age = studentData[i].substr(lhs, rhs - lhs);
+		int age = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].daysInCourse1 = studentData[i].substr(lhs, rhs - lhs);
+		int daysInCourse1 = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].daysInCourse2 = studentData[i].substr(lhs, rhs - lhs);
+		int daysInCourse2 = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find(",", lhs);
-		Student[i].daysInCourse3 = studentData[i].substr(lhs, rhs - lhs);
+		int daysInCourse3 = studentData[i].substr(lhs, rhs - lhs);
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find("\0", lhs);
-		Student[i].type = studentData[i].substr(lhs, rhs - lhs);
+		DegreeProgram type = studentData[i].substr(lhs, rhs - lhs);
 		
 	}
 
