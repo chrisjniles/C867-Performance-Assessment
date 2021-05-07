@@ -7,7 +7,7 @@
 using namespace std;
 
 // Section E1 - Create Roster class
-Roster::Roster(int) {
+Roster::Roster() {
 	const string studentData[] = {
 		"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
 		"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -15,6 +15,8 @@ Roster::Roster(int) {
 		"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
 		"A5,Christopher,Niles,cniles7@wgu.edu,38,30,35,40,SOFTWARE" // Section A - Modify the “studentData Table” to include your personal information as the last item
 	};
+
+	classRosterArray = new Student[5];
 
 	for (int i = 0; i < numStudents; i++) 
 	{
@@ -51,14 +53,21 @@ Roster::Roster(int) {
 
 		lhs = rhs + 1;
 		rhs = studentData[i].find("\0", lhs);
-		DegreeProgram type = studentData[i].substr(lhs, rhs - lhs);
+		string type = studentData[i].substr(lhs, rhs - lhs);
+		DegreeProgram dp = DegreeProgram::SOFTWARE;
+		if (type == "NETWORK") {
+			dp = DegreeProgram::NETWORK;
+		}
+		else if (type == "SECURITY") {
+			dp = DegreeProgram::SECURITY;
+		}
+
+		add(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, dp);
 		
 	}
 
 	this->lastIndex = 0;
 	
-	// Create new pointer array to hold student objects
-	this->classRosterArray = new Student [5]; 
 };
 
 Roster::~Roster() {
@@ -80,8 +89,7 @@ void Roster::remove(string studentID) {
 	for (int i = 0; i < 5; ++i) {
 		if (classRosterArray[i].GetStudentId() == studentID) {
 			cout << "Deleting: " << classRosterArray[i].GetStudentId() << endl;
-			for (; i < maxSize - 1; ++i) classRosterArray[i] = classRosterArray[i + 1];
-			--maxSize;
+			classRosterArray[i].SetStudentId("invalid");
 			return;
 		}
 	}
@@ -93,9 +101,10 @@ void Roster::printAll() {
 	cout << endl;
 	int i = 0;
 	for (int i = 0; i < 5; ++i) {
-		
-		cout << i + 1 << "   ";
-		classRosterArray[i].print();
+		if (classRosterArray[i].GetStudentId() != "invalid") {
+			cout << "   ";
+			classRosterArray[i].print();
+		}
 	}
 
 	return;

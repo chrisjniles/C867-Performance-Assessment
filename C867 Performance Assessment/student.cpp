@@ -11,7 +11,7 @@ Student::Student() {
 	lastName = "";
 	emailAddress = "";
 	age = 0;
-//	this->daysInCourse = new int[3];
+	this->daysInCourse = new int[3];
 }
 
 Student::Student(string studentId, string firstName, string lastName, string emailAddress, int age, int dIC1, int dIC2, int dIC3, DegreeProgram type) {
@@ -20,6 +20,7 @@ Student::Student(string studentId, string firstName, string lastName, string ema
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->age = age;
+	this->daysInCourse = new int[3];
 	daysInCourse[0] = dIC1;
 	daysInCourse[1] = dIC2;
 	daysInCourse[2] = dIC3;

@@ -15,7 +15,7 @@ int main() {
 		<< "Name:		Christopher Niles" << endl;
 
 	 
-	Roster* classRoster = new Roster(5);   //create classRoster, add each student to classRoster
+	Roster* classRoster = new Roster();   //create classRoster, add each student to classRoster
 	
 
 	classRoster->printAll();
